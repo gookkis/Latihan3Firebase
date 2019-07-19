@@ -29,7 +29,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Spinner spnProdi;
-    EditText etNama;
+    EditText etNama, etURLGambar;
     Button btnSimpan;
 
     ListView listViewMahasiswa;
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         spnProdi = findViewById(R.id.spn_prodi);
         etNama = findViewById(R.id.et_nama);
+        etURLGambar = findViewById(R.id.et_url_gambar);
         btnSimpan = findViewById(R.id.btn_simpan);
         listViewMahasiswa = findViewById(R.id.lv_mahasiswa);
 
@@ -89,10 +90,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (!etNama.getText().toString().isEmpty()) {
+                if (!etNama.getText().toString().isEmpty() && !etURLGambar.getText().toString().isEmpty()) {
                     String id = databaseMahasiswa.push().getKey();
 
-                    MahasiswaModel mahasiswaModel = new MahasiswaModel(id, etNama.getText().toString(), spnProdi.getSelectedItem().toString());
+                    MahasiswaModel mahasiswaModel = new MahasiswaModel(id, etNama.getText().toString(), spnProdi.getSelectedItem().toString(),
+                            etURLGambar.getText().toString());
                     databaseMahasiswa.child(id).setValue(mahasiswaModel).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {

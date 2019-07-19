@@ -3,15 +3,24 @@ package com.gookkis.latihan3firebase;
 import java.io.Serializable;
 
 public class MahasiswaModel implements Serializable {
-    private String id, nama, prodi;
+    private String id, nama, prodi, urlGambar;
 
     public MahasiswaModel() {
     }
 
-    public MahasiswaModel(String id, String nama, String prodi) {
+    public MahasiswaModel(String id, String nama, String prodi, String urlGambar) {
         this.id = id;
         this.nama = nama;
         this.prodi = prodi;
+        this.urlGambar = urlGambar;
+    }
+
+    public String getUrlGambar() {
+        return urlGambar;
+    }
+
+    public void setUrlGambar(String urlGambar) {
+        this.urlGambar = urlGambar;
     }
 
     public String getId() {

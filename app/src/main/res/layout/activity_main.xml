@@ -15,6 +15,12 @@
         android:layout_marginTop="8dp"
         android:hint="Masukan Nama" />
 
+    <EditText
+        android:id="@+id/et_url_gambar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="URL Gambar Profile" />
     <Spinner
         android:id="@+id/spn_prodi"
         android:layout_width="match_parent"
